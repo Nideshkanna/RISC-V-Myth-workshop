@@ -32,6 +32,9 @@
 ## RV-D1SK2 - Labwork for RISC-V Software Toolchain
 
 ### RV_D1SK2_L1: C Program to Compute Sum from 1 to N
+![Screenshot from 2025-05-03 20-17-25](https://github.com/user-attachments/assets/8c2ada96-aa8f-4a13-99c3-d2f019390829)
+
+
 ```c
 #include <stdio.h>
 
@@ -50,25 +53,47 @@ Compile and run natively:
 gcc sum1ton.c
 ./a.out
 ```
+![Screenshot from 2025-05-03 20-18-19](https://github.com/user-attachments/assets/bf07b9f4-a880-4b08-a430-baa786e0c84b)
+
 
 ### RV_D1SK2_L2: RISC-V GCC Compile and Disassemble
+![Screenshot from 2025-05-03 20-59-34](https://github.com/user-attachments/assets/d9cbb72b-1da5-4ee0-9801-0b876537880a)
+
+
 Compile for RISC-V:
 ```bash
 riscv64-unknown-elf-gcc -O1 -mabi=lp64 -march=rv64i -o sum1ton.o sum1ton.c
 riscv64-unknown-elf-objdump -d sum1ton.o | less
 ```
+![Screenshot from 2025-05-03 20-59-48](https://github.com/user-attachments/assets/94455357-8888-4858-82f1-85b414028fa4)
+![Screenshot from 2025-05-03 20-59-58](https://github.com/user-attachments/assets/8938435d-fdc3-4e78-9eb8-593549647092)
+
+
 - Searching in `main()` reveals ~15 instructions.
+
+![Screenshot from 2025-05-03 21-00-15](https://github.com/user-attachments/assets/ad4b39b8-a5fc-4622-83cf-3364c6284a14)
+
+
+
 - With `-Ofast` optimization:
+![Screenshot from 2025-05-03 21-00-43](https://github.com/user-attachments/assets/d77d38a5-3fb1-4247-87a7-d7b5bda559f4)
+
+
 ```bash
 riscv64-unknown-elf-gcc -Ofast -mabi=lp64 -march=rv64i -o sum1ton.o sum1ton.c
 ```
 - Now only ~12 instructions in `main()`.
+![Screenshot from 2025-05-03 21-01-08](https://github.com/user-attachments/assets/37b880ee-011b-4508-ac5a-6b53d67f78fa)
+
 
 ### RV_D1SK2_L3: Spike Simulation and Debug
 - Run on Spike:
   ```bash
   spike pk sum1ton.o
   ```
+![Screenshot from 2025-05-03 21-02-44](https://github.com/user-attachments/assets/f5945693-c427-4a25-a514-4a86efc5bae2)
+
+
 - Start Spike debugger:
   ```bash
   spike -d pk sum1ton.o
@@ -81,6 +106,9 @@ riscv64-unknown-elf-gcc -Ofast -mabi=lp64 -march=rv64i -o sum1ton.o sum1ton.c
 - Common instructions:
   - `lui a0, %hi(.LC1)`
   - `addi a0, a0, %lo(.LC1)`
+ 
+![Screenshot from 2025-05-03 21-07-27](https://github.com/user-attachments/assets/9c7f11de-8ca4-41ad-807d-30f0579d828e)
+
 
 ---
 
