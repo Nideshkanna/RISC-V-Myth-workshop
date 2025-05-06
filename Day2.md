@@ -15,6 +15,8 @@ Applications Layer → Standard Libraries → Operating System (OS) → Instruct
 Each arrow represents an interface layer (APIs, ABIs/System Call Interface, ISAs, RTL).
 
 ![Screenshot from 2025-05-06 20-31-02](https://github.com/user-attachments/assets/fd002c77-34db-4e31-903f-a2126a042e03)
+> **Source/Credits:** Kunal Ghosh sir's RISC-V MYTH Course Content
+
 
 
 RISC-V provides **32 integer registers** accessed via ABI names.  
