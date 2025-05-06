@@ -14,6 +14,9 @@ Applications Layer → Standard Libraries → Operating System (OS) → Instruct
 ```
 Each arrow represents an interface layer (APIs, ABIs/System Call Interface, ISAs, RTL).
 
+![Screenshot from 2025-05-06 20-31-02](https://github.com/user-attachments/assets/fd002c77-34db-4e31-903f-a2126a042e03)
+
+
 RISC-V provides **32 integer registers** accessed via ABI names.  
 - **XLEN** determines register width: 32-bit for RV32, 64-bit for RV64.
 
@@ -89,6 +92,10 @@ int main() {
 }
 ```
 
+![Screenshot from 2025-05-06 18-23-12](https://github.com/user-attachments/assets/a741f4f2-944b-473e-a88c-c2cc36e76d88)
+
+
+
 **load.S**
 ```assembly
     .section .text
@@ -106,17 +113,34 @@ loop:
     ret                   # return
 ```
 
+![Screenshot from 2025-05-06 18-23-30](https://github.com/user-attachments/assets/96aa2e30-1d15-492a-b7fb-fd85cf98d629)
+
+
 ### RV-D2SK2_L2: Compilation and Simulation
 ```bash
 # Compile C and assembly together
 riscv64-unknown-elf-gcc -O1 -mabi=lp64 -march=rv64i -o 1to9_custom.o 1to9_custom.c load.S
+```
 
+![Screenshot from 2025-05-06 18-25-53](https://github.com/user-attachments/assets/146d0500-0ed5-4473-8f3f-981897410e55)
+
+
+```bash
 # Run on Spike simulator
 spike pk 1to9_custom.o
+```
 
+![Screenshot from 2025-05-06 18-31-50](https://github.com/user-attachments/assets/160b8d0c-d608-4838-a5ff-31844569d73b)
+
+
+
+```bash
 # Disassemble and inspect
 riscv64-unknown-elf-objdump -d 1to9_custom.o | less
 ```
+
+![Screenshot from 2025-05-06 18-35-46](https://github.com/user-attachments/assets/bd23afb6-5772-4939-90fc-6e67714da58b)
+
 
 ---
 
@@ -130,6 +154,10 @@ In this lab, we run our C-generated program on a RISC-V CPU core written in Veri
    git clone https://github.com/kunalg123/riscv_workshop_collaterals.git
    cd riscv_workshop_collaterals/labs
    ```
+   
+![Screenshot from 2025-05-06 19-06-29](https://github.com/user-attachments/assets/06d2af57-c07a-4f82-8c38-5bc9f78b5275)
+
+
 
 2. **Inspect and Prepare Files**  
    ```bash
@@ -138,13 +166,24 @@ In this lab, we run our C-generated program on a RISC-V CPU core written in Veri
    vim testbench.v      # Testbench for simulation
    vim rv32im.sh        # Shell script to assemble and run tests
    ```
+   *Snippet of testbench.v*
+![Screenshot from 2025-05-06 19-10-39](https://github.com/user-attachments/assets/f5525971-4207-4d8c-8984-ac41355e5f5a)
 
-3. **Run Verification Script**  
+
+    *Snippet of rv32im.sh*
+![Screenshot from 2025-05-06 19-31-47](https://github.com/user-attachments/assets/659359d7-df33-4df7-b71c-0337c6005bdd)
+
+
+4. **Run Verification Script**  
    ```bash
    chmod +x rv32im.sh
    ./rv32im.sh
    ```
+      
    This script compiles the CPU core and testbench with `iverilog`, runs the simulation, and displays outputs for analysis.
+
+![Screenshot from 2025-05-06 19-34-49](https://github.com/user-attachments/assets/9924f7f1-5bdf-445d-8944-392dfd64a932)
+
 
 ---
 
