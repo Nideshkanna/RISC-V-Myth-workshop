@@ -10,7 +10,7 @@ The **Application Binary Interface (ABI)** defines the low-level interface betwe
 
 In a typical software-to-hardware flow:
 ```
-Applications → Standard Libraries → OS → ISA (RISC-V/ARM/x86) → Hardware (RTL)
+Applications Layer → Standard Libraries → Operating System (OS) → Instruction Set Architecture (RISC-V/ARM/x86) → Hardware (RTL)
 ```
 Each arrow represents an interface layer (APIs, ABIs/System Call Interface, ISAs, RTL).
 
@@ -38,19 +38,25 @@ ld x8, 16(x23)
 ```assembly
 ld x8, 16(x23)
 ```
++---------------------------------------------------------------------------------------------+
 | immediate [31:20] | rs1 (x23) [19:15] | funct3 [14:12] | rd (x8) [11:7] | opcode (ld) [6:0] |
++---------------------------------------------------------------------------------------------+
 
 #### Register-Register Add (R-type)
 ```assembly
 add x8, x24, x8
 ```
++--------------------------------------------------------------------------------------------------------------+
 | funct7 [31:25] | rs2 (x8) [24:20] | rs1 (x24) [19:15] | funct3 [14:12] | rd (x8) [11:7] | opcode (add) [6:0] |
++--------------------------------------------------------------------------------------------------------------+
 
 #### Store Double Word (S-type)
 ```assembly
 sd x8, 8(x23)
 ```
++-----------------------------------------------------------------------------------------------------------------+
 | imm[11:5] [31:25] | rs2 (x8) [24:20] | rs1 (x23) [19:15] | funct3 [14:12] | imm[4:0] [11:7] | opcode (sd) [6:0] |
++-----------------------------------------------------------------------------------------------------------------+
 
 **Instruction Formats:**
 - **R-type**: Register-register (e.g., `add`).
