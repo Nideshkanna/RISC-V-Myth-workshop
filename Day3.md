@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/cc48a567-8279-4a15-ac05-9c249fe28d29)# Day 3: Digital Logic with TL-Verilog and Makerchip
+Day 3: Digital Logic with TL-Verilog and Makerchip
 
 ## RV-D3SK1 – Combinational Logic in TL-Verilog using Makerchip
 
