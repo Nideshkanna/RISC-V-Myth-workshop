@@ -311,7 +311,8 @@ Run a full functional test: fetch, decode, execute, memory, and write-back acros
 
 ### Waveform
 
-![Screenshot from 2025-05-09 22-09-38](https://github.com/user-attachments/assets/977384dc-c56c-4e2d-9cd5-4902ad1c81ea)
+![Screenshot from 2025-05-09 22-10-47](https://github.com/user-attachments/assets/c3cac8e6-2b9b-4d42-aee2-3b1d7c9c9557)
+
 
 
 ---
