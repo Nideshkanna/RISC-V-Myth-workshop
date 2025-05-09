@@ -1,4 +1,4 @@
-# Day 3: Digital Logic with TL-Verilog and Makerchip
+![image](https://github.com/user-attachments/assets/cc48a567-8279-4a15-ac05-9c249fe28d29)# Day 3: Digital Logic with TL-Verilog and Makerchip
 
 ## RV-D3SK1 – Combinational Logic in TL-Verilog using Makerchip
 
@@ -127,7 +127,9 @@ Add a memory element to store and recall a single value within the pipeline.
 ### RV_D3SK5_L1_Introduction to Hierarchy Concept (Bonus)
 Learn how to structure TL-Verilog modules hierarchically for large designs.
 
-### RV_D3SK5_L2_Day3_Closer
-Recap key takeaways from Day 3 and preview Day 4 topics.
+![Screenshot from 2025-05-09 12-55-47](https://github.com/user-attachments/assets/c8f06641-6664-4280-8713-8679ec3796fa)
 
-> **Source/Credits:** Kunal Ghosh sir's RISC-V MYTH Course Content
+
+### RV_D3SK5_L2_Day3_Closer
+Recap key takeaways from Day 3 and preview for Day 4 - Basic RISC-V CPU micro-architecture.
+
