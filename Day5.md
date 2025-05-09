@@ -305,11 +305,11 @@ Run a full functional test: fetch, decode, execute, memory, and write-back acros
 
 ```
 
-###Diagram
+### Diagram
 
 ![Screenshot from 2025-05-09 22-09-38](https://github.com/user-attachments/assets/01304771-e93d-4935-96ea-8f776d8718a7)
 
-###Waveform
+### Waveform
 
 ![Screenshot from 2025-05-09 22-09-38](https://github.com/user-attachments/assets/977384dc-c56c-4e2d-9cd5-4902ad1c81ea)
 
